@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block home %}highlight{% endblock home %}
+{% block body %}
+
+<div class="site-content">
+	<!-- Home Jumbotron
+    ================================================== -->
+	<section class="intro" >
+		           
+	</section>
+	<!-- Container
+    ================================================== -->
+	<div class="container">
+		<div class="main-content">
+			<!-- Featured
+            ================================================== -->
+			<section class="featured-posts">
+			<div class="section-title">
+				<h2><span>Recent Story </span></h2>
+			</div>
+			<div class="row listfeaturedtag">
+				{% for post in recent_story %}
+				
+
+				<!-- begin post -->
+				<div class="col-sm-6">
+					<div class="card "style="box-shadow: 0 0 5px #ddd">
+						<div class="row">
+							<div class="col-md-5 wrapthumbnail">
+								<a href="/blog/{{post.slug}}">
+								<div class="thumbnail" style="background-image:url({{post.image.url}});">
+								</div>
+								</a>
+							</div>
+							<div class="col-md-7">
+								<div class="card-block">
+									<h2 class="card-title"><a href="/blog/{{post.slug}}">{{post.title}}</a></h2>
+									<h4 class="card-text">{{post.content|safe| truncatechars:50}}</h4>
+									<div class="metafooter">
+										<div class="wrapfooter">
+											<span class="meta-footer-thumb">
+											<img class="author-thumb" src="{% static 'images/avtar.jpg' %}" alt="Sal">
+											</span>
+											<span class="author-meta">
+											<span class="post-name"><a target="_blank" href="#"><strong>{{post.author}}</strong></a></span><br/>
+											<span class="post-date">{{post.timeStamp}}</span>
+											</span>
+											<span class="post-read-more"><a href="/blog/{{post.slug}}" title="Read Story"><i class="fa fa-link"></i></a></span>
+											<div class="clearfix">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				{% endfor %}
+				<!-- end post -->
+			</div>
+			</section>
+			<!-- Posts Index
+        ================================================== -->
+			<section class="recent-posts row">
+			<div class="col-sm-4">
+				<div class="sidebar">
+					<div class="sidebar-section">
+						<h5><span>Useful</span></h5>
+						<ul style="list-style: none;">
+							<li><a target="_blank" href="https://m.do.co/c/84c9b45d0c47">Digital Ocean</a></li>
+							<li><a target="_blank" href="https://www.cloudways.com/en/pricing.php?id=153986&a_bid=005da123">Cloudways</a></li>
+							<li><a target="_blank" href="https://shareasale.com/r.cfm?b=875645&u=1087935&m=41388&urllink=&afftrack=">Page Speed Test</a></li>
+							<li><a target="_blank" href="https://elementor.com/?ref=1556">Elementor Page Builder</a></li>
+							<li><a target="_blank" href="https://www.wowthemes.net/category/freebies/">Our Freebies</a></li>
+						</ul>
+					</div>
+					<div class="sidebar-section">
+						<h5><span>Recommended</span></h5>
+						<ul style="list-style: none;">
+							<li><a target="_blank" href="https://www.cloudways.com/en/pricing.php?id=153986&a_bid=005da123">Python Projects</a></li>
+							<li><a target="_blank" href="https://shareasale.com/r.cfm?b=875645&u=1087935&m=41388&urllink=&afftrack=">C++ Projects</a></li>
+							<li><a target="_blank" href="https://elementor.com/?ref=1556">Web development</a></li>
+							<li><a target="_blank" href="https://www.wowthemes.net/category/freebies/">Free Udemy courses</a></li>
+						</ul>
+						<a href="https://easydigitaldownloads.com/?ref=2135" title="Sell digital downloads with WordPress, for free"><img src="https://easydigitaldownloads.com/wp-content/uploads/2015/02/300x250-2.png" alt="Sell digital downloads with WordPress, for free"/></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="section-title">
+					<h2><span>All Stories</span></h2>
+				</div>
+				<div class="masonrygrid row listrecent">
+					<!-- begin post -->
+					{% for post in allPosts  %}
+					<div class="col-md-6 grid-item";>
+						<div class="card"style="box-shadow: 0 0 5px #ddd">
+							<a href="/blog/{{post.slug}}">
+							<img class="img-fluid" src="{{post.image.url}}" alt="Tree of Codes">
+							</a>
+							<div class="card-block">
+								<h2 class="card-title"><a href="/blog/{{post.slug}}">{{post.title}}</a></h2>
+								<h4 class="card-text">{{post.content|safe|truncatechars:100}}</h4>
+								<div class="metafooter">
+									<div class="wrapfooter">
+										<span class="meta-footer-thumb">
+										<img class="author-thumb" src="{% static 'images/avtar.jpg' %}" alt="Sal">
+										</span>
+										<span class="author-meta">
+										<span class="post-name"><a target="_blank" href="#">{{post.author}}</a></span><br/>
+										<span class="post-date">{{post.timeStamp}}</span>
+										</span>
+										<span class="post-read-more"><a href="/blog/{{post.slug}}" title="Read Story"><i class="fa fa-link"></i></a></span>
+										<div class="clearfix">
+										</div>
+									</div>
+								</div> 
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+					<!-- end post -->
+					
+				</div>
+				<!-- Pagination -->
+				<div class="bottompagination">
+					<div class="navigation">
+                        <nav class="pagination">
+                            <span class="page-number"> &nbsp; &nbsp; Page 1 of 1 &nbsp; &nbsp; </span>
+                        </nav>
+					</div>
+				</div>
+			</div>
+			</section>
+		</div>
+	</div>
+	<!-- /.container -->
+
+    
+{% endblock body %}

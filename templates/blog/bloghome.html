@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}This is blog Home{% endblock title %}
+{% block blog %}highlight{% endblock blog %}
+{% block body %}
+{% static 'images/2.jpg' %}
+
+
+
+<div style='margin-top:100px; margin-left:10px; '>
+    <div class="col-sm-12">
+        <div class="masonrygrid row listrecent">
+            <!-- begin post -->
+            {% for post in allPosts  %}
+            <div class="col-md-4 grid-item";>
+                <div class="card"style="box-shadow: 0 0 5px #ddd">
+                    <a href="/blog/{{post.slug}}">
+                    <img class="img-fluid" src="{{post.image.url}}" alt="Tree of Codes">
+                    </a>
+                    <div class="card-block">
+                        <h2 class="card-title"><a href="/blog/{{post.slug}}">{{post.title}}</a></h2>
+                        <h4 class="card-text">{{post.content|safe|truncatechars:100}}</h4>
+                        <div class="metafooter">
+                            <div class="wrapfooter">
+                                <span class="meta-footer-thumb">
+                                <img class="author-thumb" src="{% static 'images/avtar.jpg' %}" alt="Sal">
+                                </span>
+                                <span class="author-meta">
+                                <span class="post-name"><a target="_blank" href="#">Sal</a></span><br/>
+                                <span class="post-date">{{post.timeStamp}}</span>
+                                </span>
+                                <span class="post-read-more"><a href="/blog/{{post.slug}}" title="Read Story"><i class="fa fa-link"></i></a></span>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- end post -->
+        </div>
+        <!-- Pagination -->
+        <div class="bottompagination">
+            <div class="navigation">
+                <nav class="pagination">
+                    <span class="page-number"> &nbsp; &nbsp; Page 1 of 1 &nbsp; &nbsp; </span>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

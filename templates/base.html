@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="{% block keyword %}{% endblock keyword %}">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="{% block description %}{% endblock description %}">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>{% block title %}   {% endblock title %}</title>
+<link rel="icon" href="{% static 'images/favicon.png' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/theme.css' %}"/>
+<!-- Begin tracking codes here, including ShareThis/Analytics -->
+    
+<!-- End tracking codes here, including ShareThis/Analytics -->
+</head>	 			
+<body class="layout-default" style="background-color: #fafafa;">
+<!-- Begin Menu Navigation
+================================================== -->
+<header class="navbar navbar-toggleable-md navbar-light bg-green fixed-top mediumnavigation">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsWow" aria-controls="navbarsWow" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="container">
+	<!-- Begin Logo -->
+	<a class="navbar-brand" href="{% url 'home' %}">
+	<img src="{% static 'images/logo1.jpg' %}" alt="Affiliates - Free Bootstrap Template">
+	</a>
+	<!-- End Logo -->
+	<!-- Begin Menu -->
+	<div class="collapse navbar-collapse" id="navbarsWow">
+		<!-- Begin Menu -->
+		<ul class="navbar-nav ml-auto">
+			<div class="ml-auto form-inline">
+				<form method="get" action="/search" class=" my-2 my-lg-0 mx-4">
+					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query"
+				  	id="query">
+					<button class="btn btn-success my-1 my-sm-1" type="submit">Search</button>
+			  	</form>
+			</div>
+
+			<li class="nav-item">
+			<a class="nav-link {% block home %}   {% endblock home %}" href="{% url 'home' %}">Home</a>
+			</li>
+			<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
+			<div class="dropdown-menu" aria-labelledby="dropdown01">
+				<a class="dropdown-item" href="single.html">Hacking</a>
+				<a class="dropdown-item" href="#">Programming</a>
+				<a class="dropdown-item" href="single-sidebar-right.html">Latest News</a>
+			</div>
+			<li class="nav-item">
+				
+			</li>
+			</li>
+            <li class="nav-item">
+			<a class="nav-link {% block blog %}   {% endblock blog %}" href="/blog">Blog</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link {% block about %}   {% endblock about %}" href="/about">About</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link {% block contact %}   {% endblock contact %}" href="/contact">Contact</a>
+			</li>
+			
+		</ul>
+		<!-- End Menu -->
+	</div>
+</div>
+</header>
+<!-- End Menu Navigation
+================================================== -->
+{% block body %}  {% endblock body %}
+	<!-- Before Footer
+    ================================================== -->
+	<div class="beforefooter">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<h3>Let's Build a place of information, if you have a taste of information don't wait come fast and join as</h3>
+					<p>
+						We offer a <span>Membership of this Website</span>, so joining is Free!
+					</p>
+					<a class="btn btn-primary btn-lg" href="/contact">Join us Now</a>
+				</div>
+				<div class="col-md-4 text-right footersocial">
+					<h5>Connect with Us</h5>
+					<i class="fa fa-facebook"></i>
+					<i class="fa fa-twitter"></i>
+					<i class="fa fa-google"></i>
+					<i class="fa fa-pinterest"></i>
+					<i class="fa fa-github"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Begin Footer
+    ================================================== -->
+	<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="footer-widget">
+					<a href="contact.html">
+					<img src="{% static 'images/favicon.png' %}" alt="logo footer">
+					</a>
+				</div>
+			</div>
+			{% comment %} <div class="col-sm-3">
+				<div class="footer-widget">
+					<h5 class="title">Resources</h5>
+					<ul>
+						<li><a target="_blank" href="https://m.do.co/c/84c9b45d0c47">Digital Ocean</a></li>
+						<li><a target="blank" href="https://www.cloudways.com/en/pricing.php?id=153986&amp;a_bid=005da123">Cloudways</a></li>
+						<li><a target="blank" href="https://shareasale.com/r.cfm?b=875645&amp;u=1087935&amp;m=41388&amp;urllink=&amp;afftrack=">Page Speed Test</a></li>
+						<li><a target="blank" href="https://elementor.com/?ref=1556">Elementor Page Builder</a></li>
+						<li><a target="blank" href="https://www.wowthemes.net/category/freebies/">Our Free Themes</a></li>
+					</ul>
+				</div>
+			</div> {% endcomment %}
+			<div class="col-sm-3">
+				<div class="footer-widget">
+					<h5 class="title">Author</h5>
+					<ul>
+						<li><a href="/about">About Us</a></li>
+						<li><a href="/blog/">Blog</a></li>
+						<li><a href="/contact">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="copyright">
+			<p class="pull-left">
+				 Copyright © 2022 Flyroot.tech
+			</p>
+			<p class="pull-right">
+				<!-- Leave credit to author unless you own a commercial license: https://www.wowthemes.net/freebies-license/ -->
+				<a target="_blank" href="£">"FlyRoot.Tech"</a> - Design & Code by Nikhil Rathour
+			</p>
+			<div class="clearfix">
+			</div>
+		</div>
+	</div>
+	</footer>
+	<!-- End Footer
+    ================================================== -->
+</div>
+
+
+<!-- JavaScript
+================================================== -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+<script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+<script src="{% static 'js/theme.js' %}"></script>
+</body>
+</html>
